@@ -1,0 +1,21 @@
+{
+  "name": "remix-swa-fn",
+  "version": "0.1.0",
+  "private": "true",
+  "type": "module",
+  "main": "./handler.js",
+  "scripts": {
+    "dev": "func start --cors-credentials --port 3030"
+  },
+  "dependencies": {
+    "@azure/functions": "4.3.0",
+    "@remix-run/node": "2.8.1",
+    "@scandinavianairlines/remix-azure-functions": "1.0.1"
+  },
+  "devDependencies": {
+    "azure-functions-core-tools": "4.0.5571"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

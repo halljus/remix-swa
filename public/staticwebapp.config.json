@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json.schemastore.org/staticwebapp.config.json",
+  "platform": {
+    "apiRuntime": "node:18"
+  },
+  "routes": [
+    {
+      "route": "/favicon.ico"
+    },
+    {
+      "route": "/assets/*"
+    },
+    {
+      "route": "/*",
+      "rewrite": "/api/remix"
+    }
+  ],
+  "navigationFallback": {
+    "rewrite": "/api/remix"
+  },
+  "trailingSlash": "never"
+}
