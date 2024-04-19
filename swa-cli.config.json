@@ -3,8 +3,8 @@
   "configurations": {
     "remix-swa": {
       "appLocation": ".",
-      "apiLocation": "./server/",
-      "outputLocation": "./build/client/",
+      "apiLocation": "server",
+      "outputLocation": "build/client",
       "apiLanguage": "node",
       "apiVersion": "18"
     }

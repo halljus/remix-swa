@@ -6,6 +6,7 @@
   "scripts": {
     "clean": "rimraf .cache build node_modules/.vite",
     "build": "remix vite:build",
+    "postbuild": "cpy build/server server",
     "simulate-azure": "run-p simulate-azure:*",
     "simulate-azure:swa": "swa start ./build/client --api-location ./server --port 3000 --api-devserver-url http://127.0.0.1:3030",
     "simulate-azure:function": "func start --prefix server/ --cors-credentials --port 3030"
@@ -38,6 +39,7 @@
     "@typescript-eslint/eslint-plugin": "7.4.0",
     "@typescript-eslint/parser": "7.4.0",
     "azure-functions-core-tools": "4.0.5571",
+    "cpy-cli": "5.0.0",
     "cross-env": "7.0.3",
     "eslint": "8.57.0",
     "husky": "9.0.11",

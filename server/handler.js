@@ -1,7 +1,6 @@
 import { app } from '@azure/functions';
 import { createRequestHandler } from '@scandinavianairlines/remix-azure-functions';
-
-import * as build from '../build/server/index.js';
+import * as build from './build/server/index.js';
 
 /**
  * This function is called on every request to determine the application's load context.
@@ -14,9 +13,10 @@ function getLoadContext(request, context) {
   return { example: true };
 }
 
+app.setup({ enableHttpStream: true });
+
 app.http('remix', {
   methods: ['GET', 'POST', 'DELETE', 'HEAD', 'PATCH', 'PUT', 'OPTIONS', 'TRACE', 'CONNECT'],
   authLevel: 'function',
   handler: createRequestHandler({ build, getLoadContext }),
-  // route: '/{*path}',
 });

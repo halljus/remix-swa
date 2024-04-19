@@ -24,6 +24,23 @@ Create the `server/local.settings.json` file with the following contents:
 }
 ```
 
+Modify `swa-cli.config.json` to point at whatever you called your Azure Static Web App:
+
+```json
+{
+  "$schema": "https://aka.ms/azure/static-web-apps-cli/schema",
+  "configurations": {
+    "YOUR-AZURE-STATIC-WEB-APP-NAME-GOES-HERE": {
+      "appLocation": ".",
+      "apiLocation": "server",
+      "outputLocation": "build/client",
+      "apiLanguage": "node",
+      "apiVersion": "18"
+    }
+  }
+}
+```
+
 ## Simulate Azure locally
 
 ```sh
